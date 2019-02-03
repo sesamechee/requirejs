@@ -1,0 +1,23 @@
+@function color($color-group, $index) {
+	@return nth( map-get($color-array, $color-group), $index );
+}
+
+$color-array: (
+	black: ( #000 , #999 , #f8f8f8 ),
+	red: ( #B90220, #BA2028 )
+);
+
+$input-height : 40px;
+
+$font-size-desktop-body : 15px;
+$font-size-desktop-h1: 40px;
+$font-size-desktop-h2: 30px;
+$font-size-desktop-h3: 20px;
+
+$font-size-mobile-body : 15px;
+$font-size-mobile-h1: 25px;
+$font-size-mobile-h2: 20px;
+$font-size-mobile-h3: 18px;
+
+$max-desktop-width : 1200px;
+$min-mobile-width : 320px;
