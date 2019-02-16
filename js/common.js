@@ -1,9 +1,8 @@
-$(window).on('load', function(){
-	hideLoading();
-});
-
-$(document).ready(function(){
-	$('select').selectric();
+require(["common"], function() {
+	require(["domReady!"], function() {
+		$('select').selectric();
+		hideLoading();
+	});
 });
 
 function showLoading(){
