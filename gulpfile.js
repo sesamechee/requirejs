@@ -12,7 +12,7 @@ var browserSync = require('browser-sync').create();
 
 var paths = {
 	browserSyncOption: {
-		proxy: 'http://armani.cny2019/',
+		proxy: 'http://requirejs.demo/',
 		open: "external",
 		ghostMode: false
 	},
