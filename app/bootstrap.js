@@ -10,30 +10,31 @@ requirejs.config({
 			}
 		}
 	},
-	baseUrl:'./',
+	baseUrl:'../',
 	// scriptType: 'text/babel',
 	paths:{
-		'polyfill'      :"https://cdn.polyfill.io/v2/polyfill.min",
-		'domReady'		:"/lib/domReady",
-		'jquery'        :'/lib/jquery-3.3.1.min',
-		'magnific-popup':'/lib/magnific-popup/jquery.magnific-popup.min',
-		'selectric'		:'/lib/selectric/jquery.selectric.min',
-		'responsive'    :'/js/responsive',
-		'validation'	:'/js/validation',
-		'common'        :'/js/common',
-		'index'         :'/js/index',
-		'loader'        :'/js/loader'
+		'polyfill'      		:'https://cdn.polyfill.io/v2/polyfill.min',
+		'domReady'				:'./lib/domReady',
+		'jquery'        		:'./lib/jquery-3.3.1.min',
+		'intersection-observer'	:'./lib/intersection-observer',
+		'magnific-popup'		:'./lib/magnific-popup/jquery.magnific-popup.min',
+		'selectric'				:'./lib/selectric/jquery.selectric.min',
+		'responsive'    		:'./js/responsive',
+		'validation'			:'./js/validation',
+		'common'        		:'./js/common',
+		'index'         		:'./js/index',
+		'loader'        		:'./js/loader'
 	},
 	shim:{
 		'responsive'    :['jquery'],
 		'magnific-popup':['jquery'],
 		'jquery-ui'     :['jquery'],
-		'common'        :['jquery', 'selectric'],
+		'common'        :['jquery', 'intersection-observer', 'selectric'],
 		'loader'        :[
-			"jquery",
-			"magnific-popup",
+			'jquery',
+			'magnific-popup',
 			'selectric',
-			"responsive",
+			'responsive',
 			'common'
 		]
 	}

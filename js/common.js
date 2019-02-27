@@ -2,8 +2,30 @@ require(["common"], function() {
 	require(["domReady!"], function() {
 		$('select').selectric();
 		hideLoading();
+		
+		setTimeout(function(){
+			animationInit();
+		},500);
 	});
 });
+
+function animationInit() {
+	var animateObj = document.querySelectorAll('.animate');
+	observer = new IntersectionObserver(function(entries) {
+		entries.forEach(function(entry) {
+			if (entry.intersectionRatio > 0) {
+				$(entry.target).addClass($(entry.target).data('anim') + ' animated');
+			}
+		});
+	}, {
+		root: null,
+		threshold: 0.5
+	});
+
+	animateObj.forEach(function(image) {
+		observer.observe(image);
+	});
+}
 
 function showLoading(){
 	$('body').addClass('loading');
