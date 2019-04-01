@@ -3,45 +3,45 @@ var IE9down = false;
 var IpadFlag = false;
 var MobileFlag = false;
 
-$(document).ready(function(){
+$(document).ready(function () {
 	detectBroswer();
 	new responsive();
 });
 
-function detectBroswer(){
+function detectBroswer() {
 	var ua = window.navigator.userAgent.toLowerCase();
 	var ver = window.navigator.appVersion.toLowerCase();
 	var gHasTouch = 'ontouchstart' in window;
 
-	if( !gHasTouch ) {
+	if (!gHasTouch) {
 		$('body').addClass('noTouch');
 	}
 
-	if (ua.indexOf("msie") != -1){
-		if (ver.indexOf("msie 6.") != -1){
-			IE9down =true;
-		}else if (ver.indexOf("msie 7.") != -1){
-			IE9down =true;
-		}else if (ver.indexOf("msie 8.") != -1){
-			IE9down =true;
-		}else if (ver.indexOf("msie 9.") != -1){
-			IE9down =true;
-		}else if (ver.indexOf("msie 10.") != -1){
-			IE9down =false;
-		}else{
-			IE9down =false;
+	if (ua.indexOf('msie') != -1) {
+		if (ver.indexOf('msie 6.') != -1) {
+			IE9down = true;
+		} else if (ver.indexOf('msie 7.') != -1) {
+			IE9down = true;
+		} else if (ver.indexOf('msie 8.') != -1) {
+			IE9down = true;
+		} else if (ver.indexOf('msie 9.') != -1) {
+			IE9down = true;
+		} else if (ver.indexOf('msie 10.') != -1) {
+			IE9down = false;
+		} else {
+			IE9down = false;
 		}
 	}
 
-	if (ua.match(/(iphone)/) || ua.match(/(ipad)/) || ua.match(/(ipod)/) || ua.match(/(android)/) )	{
+	if (ua.match(/(iphone)/) || ua.match(/(ipad)/) || ua.match(/(ipod)/) || ua.match(/(android)/)) {
 		MobileFlag = true;
 	}
 
-	if (ua.match(/(ipad)/) )	{
+	if (ua.match(/(ipad)/)) {
 		IpadFlag = true;
 	}
 
-	if ( IE9down ) {
+	if (IE9down) {
 		jQuery.fx.interval = 1000 / 30;
 	} else {
 		jQuery.fx.interval = 1000 / 60;
@@ -52,8 +52,8 @@ function detectBroswer(){
 function responsive() {
 	var _self = this;
 
-	_self.layoutSize = [0, 780 , 1200];
-	_self.layout = ['mobile', 'tablet' , 'desktop'];
+	_self.layoutSize = [0, 780, 1200];
+	_self.layout = ['mobile', 'tablet', 'desktop'];
 
 	_self.window = $(window);
 	_self.body = $('body');
@@ -83,7 +83,7 @@ responsive.prototype.checkSize = function () {
 	var _windowWidth = window.innerWidth || $(window).width();
 
 	for (var i = 0; i < _self.layoutSize.length; i++) {
-		if (_self.layoutSize[i] > _windowWidth ) {
+		if (_self.layoutSize[i] > _windowWidth) {
 			break;
 		} else {
 			_layout = i;
